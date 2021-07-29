@@ -1,24 +1,7 @@
-# opportunity
-
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+# vue-components-sk
+개인 과제에서 필요한 컴포넌트와 (보안에 걸리지 않을) 이이디어 업로드용
+### Tools
+- Vue
+- Springboot(1.8)
+- Other Solutions(i-FACTs...)
+- MSSQL
