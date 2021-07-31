@@ -39,20 +39,21 @@
 <script>
 export default {
   name: "OpptCard",
-  data() {
-    return {
-      title: "친환경 PET 샘플 요청 件",
-      summary: "중국 화장품 공장에 8/25까지 샘플 배송",
-      diff: 1,
-      unit: "hour",
-      isAlarming: true,
-      faceUrl: require("@/assets/images/face.png"),
-    };
-  },
+  props: {
+    title:String,
+    summary:String,
+    diff:Number,
+    unit:String,
+    isAlarming:Boolean,
+    faceUrl:String
+  }
+  // diff와 unit, importance 구하는 로직 필요하다.
+  // summary는 KoBART summarization 활용해보면 좋을 거 같다.
 };
 </script>
 <style lang="scss">
 .oppt-card {
+  font-family: Roboto;
   width: 391px;
   height: 206px;
   background-color: #ebebeb;
