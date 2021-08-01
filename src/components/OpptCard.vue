@@ -1,8 +1,8 @@
 <template>
   <div class="oppt-card">
-    <div class="header">
+    <div class="oppt-header">
       <div class="left-side-box">
-        <div class="title">
+        <div class="oppt-title">
           {{ title }}
         </div>
         <div class="summary">
@@ -13,7 +13,7 @@
         <img :src="faceUrl" />
       </div>
     </div>
-    <div class="footer">
+    <div class="oppt-footer">
       <div class="left-side-box">
         <div v-if="unit === 'min'" class="updated-before min">
           {{ diff }}분 전
@@ -40,13 +40,13 @@
 export default {
   name: "OpptCard",
   props: {
-    title:String,
-    summary:String,
-    diff:Number,
-    unit:String,
-    isAlarming:Boolean,
-    faceUrl:String
-  }
+    title: String,
+    summary: String,
+    diff: Number,
+    unit: String,
+    isAlarming: Boolean,
+    faceUrl: String,
+  },
   // diff와 unit, importance 구하는 로직 필요하다.
   // summary는 KoBART summarization 활용해보면 좋을 거 같다.
 };
@@ -64,13 +64,13 @@ export default {
   flex-direction: column;
   justify-content: space-between;
 
-  .header {
+  .oppt-header {
     text-align: left;
     display: flex;
     justify-content: space-between;
     padding: 15px;
 
-    .title {
+    .oppt-title {
       font-weight: bold;
       font-size: 20px;
       line-height: 23px;
@@ -86,7 +86,7 @@ export default {
       text-align: center;
     }
   }
-  .footer {
+  .oppt-footer {
     display: flex;
     justify-content: space-between;
     padding: 15px;

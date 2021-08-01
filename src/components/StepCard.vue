@@ -1,16 +1,14 @@
 <template>
   <div class="step-card">
-    <div class="header">
-      <div class="title">
-          {{ stage }}단계 : {{ title }}
-        </div>
-        <div class="summary">
-          {{ summary }}
-        </div>
+    <div class="step-header">
+      <div class="step-title">{{ stage }}단계 : {{ title }}</div>
+      <div class="summary">
+        {{ summary }}
       </div>
-    <div class="footer">
+    </div>
+    <div class="step-footer">
       <div class="right-side-box">
-        {{$moment(deadline).format('YYYY-MM-DD')}}
+        {{ $moment(deadline).format("YYYY-MM-DD") }}
       </div>
     </div>
   </div>
@@ -18,12 +16,16 @@
 <script>
 export default {
   name: "StepCard",
-  props : {
+  props: {
     stage: Number,
     title: String,
     summary: String,
-    deadline: Date
-  }
+  },
+  data() {
+    return {
+      deadline: new Date(),
+    };
+  },
 };
 </script>
 <style lang="scss">
@@ -39,10 +41,10 @@ export default {
   flex-direction: column;
   justify-content: space-between;
 
-  .header {
+  .step-header {
     text-align: left;
     padding: 15px;
-    .title {
+    .step-title {
       font-weight: bold;
       font-size: 20px;
       line-height: 23px;
@@ -59,11 +61,10 @@ export default {
       text-align: center;
     }
   }
-  .footer {
+  .step-footer {
     display: flex;
     justify-content: flex-end;
     padding: 15px;
-
   }
 }
 </style>

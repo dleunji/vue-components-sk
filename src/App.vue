@@ -15,34 +15,35 @@
       :max="max"
       :disabled="disabled"
     />
-    <k-progress 
+    <k-progress
       :percent="percent"
       :line-height="10"
       color="#f53b4d"
       :show-text="false"
     />
-    <StepCard
-      :stage="stepStage"
-      :title="stepTitle"
-      :summary="stepSummary"
-      deadline="2017-08-09 18:30"
-    />
+    <StepCard :stage="stepStage" :title="stepTitle" :summary="stepSummary" />
     <DTPicker />
+    <FileAgent />
+    <OpptEditList />
   </div>
 </template>
 
 <script>
-import OpptCard from "./components/OpptCard.vue"
-import Slider from './components/Slider.vue'
-import StepCard from './components/StepCard.vue'
-import DTPicker from './components/DTPicker.vue'
+import OpptCard from "./components/OpptCard";
+import Slider from "./components/Slider";
+import StepCard from "./components/StepCard";
+import DTPicker from "./components/DTPicker";
+import FileAgent from "./components/FileAgent";
+import OpptEditList from "./components/OpptEditList";
 export default {
   name: "App",
   components: {
     OpptCard,
     Slider,
     StepCard,
-    DTPicker
+    DTPicker,
+    FileAgent,
+    OpptEditList,
   },
   data() {
     return {
@@ -63,12 +64,11 @@ export default {
       percent: 30,
 
       /* StepCard */
-      stepStage:1,
-      stepTitle:'업체 미팅',
-      stepSummary:'피곤하지..'
-
-    }
-  }
+      stepStage: 1,
+      stepTitle: "업체 미팅",
+      stepSummary: "피곤하지..",
+    };
+  },
 };
 </script>
 
@@ -80,6 +80,5 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
-  
 }
 </style>
